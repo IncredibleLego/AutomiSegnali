@@ -1,52 +1,42 @@
-# Bo{r,s}a 👜
+# Automi ed Ostacoli 🪨
 
-[![Workflow results](https://github.com/IncredibleLego/BoRSa/actions/workflows/gradle.yml/badge.svg)](https://github.com/IncredibleLego/BoRSa/actions/workflows/gradle.yml)
+La seguente repository contiene il progetto sviluppato nell'ambito del corso di Laboratorio di Algoritmi della professoressa Violetta Donati nell'anno accademico 24/25
 
-La seguente repository contiene il progetto sviluppato nell'ambito del corso di Programmazione II del professore Massimo Santini nell'anno accademico 24/25
+Il progetto realizzato in Go gestisce un piano cartesiano contenente automi ed ostacoli
 
-Il progetto realizzato in Java gestisce una borsa e le sue operazioni
+![Piano](./assets/piano.png)
 
-![Schema Progetto](./assets/schemaFinaleProgetto.png)
-
-Nel file `ISTRUZIONI.html` sono presenti le regole del progetto e in `README.html` sono presenti le specifiche del progetto
+Nel file `progetto-gen2025-v4-9gen2025.pdf` sono presenti le specifiche del progetto e in `Relazione_23407A_Corrado_Francesco.pdf` è presente la relazione di esso
 
 Le entità presenti nel progetto sono le seguenti:
 
-### Azienda
+### Automi
 
-Rappresenta una Azienda che può quotarsi nella borsa
+Puntiformi, possono spostarsi in un punto di richiamo
 
-### Operatore
+### Ostacoli
 
-Un operatore che può acquistare e vendere azioni di Aziende tramite la Borsa
-
-### Borsa
-
-Gestisce le operazioni di allocazione, vendita e acquisto, cambio valore e politica di prezzo delle azioni
+Impediscono il movimento agli auotmi
 
 ## Organizzazione
 
 Il progetto è gestito nel seguente modo:
 
-- All'interno della cartella `src/main` sono presenti due cartelle:
-    - `borsanova` contiene i file java del progetto effettivi `Azienda.java` `Operatore.java` e `Borsa.java`
-    - `clients` contiene i client implementati per testare le funzionalità del progetto
-- Nella cartella `tests/clients` sono contenuti i test che utilizzano i clients per testare il progetto, dove:
-    - `args` sono argomenti di riga di comando
-    - `input` sono valori passati in input
-    - `expected` sono gli output richiesti con l'input forniti
+- All'interno della cartella `29407A_corrado_francesco` è presente il progetto:
+    - `base.in` e `base.out` sono file di input per il testing
+    - `formato_test.go` `lib_test.go` e `utils_test.go` sono files di testing
+    - `29407A_corrado_francesco.go` è il main del progetto
+
+- All'interno della cartella `filesTesting` sono presenti numerosi test di input con i relativi output per testare il progetto su vari aspetti
+
+- All'interno della cartella `generatoreTest` è presente il file `generator.go` che serve per generare file di input personalizzati nel formato richiesto dal programma. I file generati sareanno salvati all'interno di `test_file.txt`
 
 ## Funzionalità
 
 Il progetto passa tutti i test ed è perfettamente funzionante e permette di:
 
-* Quotare una Azienda nella Borsa
-* Operatore può comprare/vendere le proprie azioni
-* Operatore puù aumentare/diminuire il suo budget
-* Borsa gestisce le operazioni di vendita
-* Borsa può cambiare la politica di prezzo applicata dopo le vendite
-
-![Schema funzionamento](./assets/funzionamentoProgetto.png)
-
+* Inserire nel piano automi ed ostacoli
+* Spostare automi in un punto di richiamo se possibile
+* Calcolare la tortuosità minima di un percorso
 
 *Francesco Corrado 2025*
